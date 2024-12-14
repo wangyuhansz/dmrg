@@ -200,8 +200,8 @@ def finite_dmrg(block: Block):
         rho_reduced = construct_reduced_density_matrix(Psis, blockL.M, blockR.M)
         D, V = diagonalize_sort(rho_reduced, sort=-1)
         blockL = truncate(blockL, D, V)
-        blockL, blockR = direction_reverser(blockL, blockR)
         blockL = print_results('Finite DMRG', i, blockL, Es)
+        blockL, blockR = direction_reverser(blockL, blockR)
 
 
 if __name__ == '__main__':
